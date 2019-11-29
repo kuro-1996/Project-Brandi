@@ -6,12 +6,18 @@ a {
   color: white;
 }
 
-ul, ol, p {
+ul,
+ol,
+p {
   padding: 0;
   margin: 0;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 0;
 }
 
@@ -23,40 +29,45 @@ img {
   max-width: 100%;
 }
 
-body{
+body {
   background: #062033;
 }
 
-.container{
-  @media only screen and (min-width : 1200px){
+.container {
+  @media only screen and (min-width: 1200px) {
     max-width: 1200px;
-  } 
+  }
 }
-.row{
+.row {
   margin: 0;
 }
 
-button{
+button {
   cursor: pointer;
 }
-input{
+input {
   outline: none;
 }
-.slick-arrow{
+.slick-arrow {
   display: none !important;
 }
 
-.change{
+.change {
   background-color: #1ea78d;
 }
 
-.top{
+.top {
   display: flex;
-    flex-flow: column;
-    align-items: center;
-    padding-top: 70px;
-    position: relative;
-    margin-bottom: 25px;
+  flex-flow: column;
+  align-items: center;
+  padding-top: 70px;
+  position: relative;
+  margin-bottom: 25px;
+  h2 {
+    font-weight: 800;
+    font-size: 28px;
+    color: #0eb493;
+    margin-bottom: 17px;
     &::after,
     &::before {
       content: "";
@@ -72,13 +83,8 @@ input{
     &::before {
       @include calc(right, "50% + 23px");
     }
-    h2 {
-      font-weight: 800;
-      font-size: 28px;
-      color: #0eb493;
-      margin-bottom: 19px;
-    }
-    i {
-      color: #c3c6c7;
-    }
+  }
+  i {
+    color: #c3c6c7;
+  }
 }

@@ -58,7 +58,7 @@ $('.nav-bar_menu').children().click(function () {
 });
 
 $(document).ready(function () {
-    $('.content_slick').slick({
+    $('.content-slick').slick({
         dots: true,
         loop: true,
         infinite: true,
