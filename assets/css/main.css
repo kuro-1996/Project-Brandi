@@ -8374,7 +8374,7 @@ header .nav-bar .nav-bar_menu .active::before {
 
 /************team**********/
 .funfact {
-  background: url(/assets/img/ff-bg.jpg);
+  background: url("../img/ff-bg.jpg");
   background-size: cover;
 }
 
@@ -9011,7 +9011,7 @@ footer .wrap_info p span a {
 }
 
 .banner {
-  background: url("/assets/img/Bandi-banner.png");
+  background: url("../img/Bandi-banner.png");
 }
 
 .banner .slick-dots {
