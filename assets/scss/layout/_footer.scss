@@ -1,0 +1,198 @@
+footer {
+  background: #1ea78d;
+  line-height: 1.9;
+  .footer-wrap {
+    padding: 100px 0 122px 0;
+    .col-12 {
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+      @media #{$info-phone} {
+        margin-bottom: 50px;
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .wrap_comp {
+    @include font-size(13px);
+    color: #ffffff;
+    padding-right: 10px;
+    word-spacing: 1px;
+    @media #{$info-tablet-vertical} {
+      padding-right: 30px;
+    }
+    @media #{$info-phone} {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+    }
+    img {
+      display: block;
+      margin-bottom: 37px;
+    }
+  }
+  .wrap_search {
+    padding: 14px 12px 0 10px;
+    @media #{$info-phone} {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      padding: 0;
+    }
+    @media #{$info-tablet-vertical} {
+      padding: 0 12px 0 30px;
+    }
+    h6 {
+      font-weight: 700;
+      @include font-size(14px);
+      color: #d7d5d0;
+      margin-bottom: 43px;
+      @media #{$info-phone} {
+        margin-bottom: 20px;
+      }
+    }
+    p {
+      color: #ffffff;
+      @include font-size(13px);
+      word-spacing: 1px;
+      padding-right: 20px;
+      @media #{$info-phone} {
+        padding-right: 0;
+        text-align: center;
+      }
+    }
+    .search_area {
+      height: 42px;
+      border: 2px solid #ffffff;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 17px;
+      @include border-radius(5px);
+      @media #{$info-phone} {
+        width: 80%;
+      }
+      input {
+        width: 100%;
+        border: none;
+        background: none;
+        padding-left: 15px;
+        color: #ffffff;
+        @include font-size(13px);
+      }
+      .fa {
+        border: none;
+        background: none;
+        @include font-size(20px);
+        color: rgba(#ffffff, 0.6);
+        padding-right: 17px;
+        &:hover {
+          color: #062033;
+        }
+      }
+    }
+  }
+  .wrap_link {
+    padding: 14px 6px 0 19px;
+    @media screen and (min-width: 992px) and (max-width: 1200px){
+      padding-left: 6px;
+    }
+    @media #{$info-tablet-vertical} {
+      padding: 14px 30px 0 0;
+    }
+    @media #{$info-phone} {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      padding: 0;
+    }
+    h6 {
+      font-weight: 700;
+      @include font-size(14px);
+      color: #d7d5d0;
+      margin-bottom: 36px;
+      @media #{$info-phone} {
+        margin-bottom: 20px;
+      }
+    }
+    .link_col {
+      display: flex;
+      a {
+        display: block;
+        @include font-size(13px);
+        margin-bottom: 8px;
+        &:last-child {
+          margin: 0;
+        }
+        &:hover {
+          color: #062033;
+        }
+      }
+    }
+    .col_left {
+      margin-right: 42px;
+    }
+  }
+  .wrap_info {
+    @include font-size(13px);
+    padding: 67px 0 0 38px;
+    color: #062033;
+    @media screen and (min-width: 992px) and (max-width: 1200px){
+      padding-left: 28px;
+    }
+    @media #{$info-tablet-vertical} {
+      padding-left: 30px;
+    }
+    @media #{$info-phone} {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      padding: 0;
+    }
+    p {
+      color: #ffffff;
+      margin-bottom: 48px;
+      position: relative;
+      @media #{$info-phone-4}{
+        text-align: center;
+      }
+      @media #{$info-phone}{
+        margin-bottom: 25px;
+      }
+      &::before {
+        content: "";
+        height: 39px;
+        width: 1px;
+        background: #177e72;
+        position: absolute;
+        left: -12px;
+        bottom: 4px;
+        @media #{$info-tablet-vertical} {
+          left: -13px;
+          bottom: 0;
+        }
+        @media #{$info-phone} {
+          display: none;
+        }
+      }
+      .ti-heart {
+        color: #177e72;
+        padding: 0 14px 0 9px;
+        font-weight: bold;
+      }
+      span {
+        a {
+          color: #062033;
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,223 @@
+header {
+  background: rgba(#101636, .3);
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  z-index: 20;
+  transition: background-color 500ms ease-in-out;
+  @media #{$info-phone} {
+    height: 48px;
+  }
+  .container {
+    height: 100%;
+  }
+  .nav-bar {
+    justify-content: space-between;
+    @include font-size(13px);
+    height: 100%;
+    @media #{$info-phone}{
+      justify-content: center;
+    }
+    .nav-bar_brand {
+      display: flex;
+      align-items: center;
+      z-index: 99;
+      p {
+        position: relative;
+        color: #546466;
+        padding-top: 10px;
+        font-weight: 300;
+        @media #{$info-phone}{
+          display: none;
+        }
+        &.fix{
+          color: #ffffff;
+        }
+        &.fix::before{
+          background: #000000;
+        }
+        &::before {
+          content: "";
+          height: 17px;
+          width: 1px;
+          background: #154458;
+          position: absolute;
+          left: -21px;
+          bottom: 1px;
+        }
+      }
+      a {
+        padding-top: 2px;
+        margin-right: 50px;
+        @media #{$info-phone}{
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+    .nav-bar_btn {
+      position: absolute;
+      padding: 0;
+      top: 15%;
+      transform: translate(-15%);
+      right: 0;
+      height: 35px;
+      width: 35px;
+      background: none;
+      border: none;
+      outline: none;
+      z-index: 99;
+      &.active{
+        height: 100px;
+        width: 100px;
+        @include border-radius(50%);
+        background: rgba(#ffffff, .3);
+        top: -40px;
+        right: -50px;
+      }
+      .btn_icon.active {
+        background: rgba(#ffffff, 0);
+        left: 40%;
+        top: 65%;
+        transform: translate(-40%, -65%);
+        &::before {
+          width: 20px;
+          bottom: 0;
+          transform: rotate(45deg);
+        }
+        &::after {
+          width: 20px;
+          top: 0;
+          transform: rotate(-45deg);
+        }
+      }
+      .btn_icon {
+        width: 17px;
+        height: 2px;
+        background: #ffffff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: rotate 500ms ease-in-out;
+        display: none;
+        @media #{$info-phone}{
+          display: block;
+        }
+        &::before {
+          content: "";
+          width: 17px;
+          height: 2px;
+          background: #ffffff;
+          position: absolute;
+          bottom: 5px;
+          right: 0;
+          transition: all 200ms ease-in-out;
+        }
+        &::after {
+          content: "";
+          width: 17px;
+          height: 2px;
+          background: #ffffff;
+          position: absolute;
+          top: 5px;
+          right: 0;
+          transition: all 200ms ease-in-out;
+        }
+      }
+    }
+    .nav-bar_menu {
+      display: flex;
+      list-style: none;
+      @media #{$info-phone} {
+        display: none;
+        flex-flow: column;
+        position: absolute;
+        width: 100%;
+        align-items: center;
+        padding: 20% 0 30% 0;
+        top: 0;
+        right: 0;
+        transition: all 300ms ease-in-out;
+        background: rgba(#000000,.9);
+        &.active {
+          display: flex;
+        }
+      }
+      a {
+        padding: 31px 4px 0 4px;
+        margin-left: 26px;
+        position: relative;
+        &:first-child {
+          margin: 0;
+        }
+        &.fix {
+          &.active {
+            &::before {
+              background: #1B4F72 ;
+            }
+          }
+          &:hover {
+            &::before {
+              background: #1B4F72 ;
+            }
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          top: 0;
+          left: 0;
+        }
+        &:hover {
+          color: #32b0ee;
+          &::before {
+            background: #32b0ee;
+          }
+        }
+        &.fix{
+          &.active{
+            &::before{
+              background: #000000;
+            }
+          }
+          &:hover {
+            &::before {
+              background: #000000;
+            }
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          top: 0;
+          left: 0;
+        }
+        &:hover {
+          color: #32b0ee;
+          &::before {
+            background: #32b0ee;
+          }
+        }
+        @media #{$info-phone} {
+          margin: 0;
+          padding: 10px 0 10px 0;
+          text-align: right;
+          @include font-size(30px);
+          &::before {
+            display: none;
+          }
+        }
+      }
+      .active {
+        &::before {
+          background: #32b0ee;
+        }
+      }
+    }
+  }
+}

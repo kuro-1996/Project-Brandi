@@ -1,0 +1,84 @@
+a {
+  &:hover {
+    text-decoration: none;
+    color: white;
+  }
+  color: white;
+}
+
+ul, ol, p {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+* {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+body{
+  background: #062033;
+}
+
+.container{
+  @media only screen and (min-width : 1200px){
+    max-width: 1200px;
+  } 
+}
+.row{
+  margin: 0;
+}
+
+button{
+  cursor: pointer;
+}
+input{
+  outline: none;
+}
+.slick-arrow{
+  display: none !important;
+}
+
+.change{
+  background-color: #1ea78d;
+}
+
+.top{
+  display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 70px;
+    position: relative;
+    margin-bottom: 25px;
+    &::after,
+    &::before {
+      content: "";
+      width: 90px;
+      height: 1px;
+      background: #c3c6c7;
+      position: absolute;
+      bottom: 6px;
+    }
+    &::after {
+      @include calc(left, "50% + 23px");
+    }
+    &::before {
+      @include calc(right, "50% + 23px");
+    }
+    h2 {
+      font-weight: 800;
+      font-size: 28px;
+      color: #0eb493;
+      margin-bottom: 19px;
+    }
+    i {
+      color: #c3c6c7;
+    }
+}
