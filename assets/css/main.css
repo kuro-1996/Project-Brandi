@@ -7532,7 +7532,6 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 70px;
   position: relative;
   margin-bottom: 25px;
 }
@@ -7857,10 +7856,10 @@ header .nav-bar .nav-bar_menu .active::before {
 
 .features {
   background: #f4f7f9;
+  padding: 70px 0 51px 0;
 }
 
 .features .slick-dots {
-  padding-bottom: 45px;
   position: unset;
 }
 
@@ -7925,6 +7924,7 @@ header .nav-bar .nav-bar_menu .active::before {
 /*****features*********/
 .work {
   background: #ffffff;
+  padding-top: 92px;
 }
 
 .work .work-header {
@@ -7937,7 +7937,7 @@ header .nav-bar .nav-bar_menu .active::before {
   clear: both;
 }
 
-.work .work-content p {
+.work .work-content .container p {
   max-width: 940px;
   margin: 0 auto;
   margin-bottom: 48px;
@@ -7986,7 +7986,6 @@ header .nav-bar .nav-bar_menu .active::before {
 }
 
 .work .element-item {
-  position: relative;
   float: left;
   width: 25%;
   height: 300px;
@@ -8035,6 +8034,18 @@ header .nav-bar .nav-bar_menu .active::before {
   font-size: 18px;
   font-size: 1.125rem;
   padding-top: 95px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .work .element-item .item-hover {
+    padding: 95px 10px 0 10px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .work .element-item .item-hover {
+    padding: 60px 20px 0 20px;
+  }
 }
 
 @media only screen and (max-width: 767px) and (min-width: 501px) {
@@ -8098,20 +8109,21 @@ header .nav-bar .nav-bar_menu .active::before {
 /***********work**********/
 .team {
   background: #ffffff;
-}
-
-.team .team-header {
-  padding-top: 95px;
-}
-
-.team .team-wrap {
-  padding: 6px 0 87px 0;
+  padding: 94px 0 117px 0;
 }
 
 @media only screen and (max-width: 767px) {
-  .team .team-wrap {
-    padding-bottom: 56px;
+  .team {
+    padding: 94px 0 96px 0;
   }
+}
+
+.team .team-header {
+  margin-bottom: 31px;
+}
+
+.team .content-slick.slick-dotted.slick-slider {
+  margin: 0;
 }
 
 .team .content-slick .slick-arrow {
@@ -8212,6 +8224,7 @@ header .nav-bar .nav-bar_menu .active::before {
 
 .team .slick_item img {
   height: 300px;
+  margin-bottom: 19px;
 }
 
 @media only screen and (max-width: 992px) {
@@ -8224,6 +8237,7 @@ header .nav-bar .nav-bar_menu .active::before {
 @media only screen and (max-width: 767px) {
   .team .slick_item img {
     height: 250px;
+    margin-bottom: 10px;
   }
 }
 
@@ -8256,6 +8270,7 @@ header .nav-bar .nav-bar_menu .active::before {
   .team .slick_item .item_hover {
     width: 240px;
     height: 250px;
+    padding-top: 28px;
   }
 }
 
@@ -8355,13 +8370,6 @@ header .nav-bar .nav-bar_menu .active::before {
 
 .team .slick_item .hover_name {
   text-align: center;
-  padding-top: 19px;
-}
-
-@media only screen and (max-width: 767px) {
-  .team .slick_item .hover_name {
-    padding-top: 10px;
-  }
 }
 
 .team .slick_item .hover_name h6 {
@@ -8380,14 +8388,11 @@ header .nav-bar .nav-bar_menu .active::before {
 .funfact {
   background: url("../img/ff-bg.jpg");
   background-size: cover;
-}
-
-.funfact .funfact-content {
-  padding-bottom: 152px;
+  padding: 93px 0 152px 0;
 }
 
 @media only screen and (max-width: 992px) {
-  .funfact .funfact-content {
+  .funfact {
     padding-bottom: 76px;
   }
 }
@@ -8447,6 +8452,7 @@ header .nav-bar .nav-bar_menu .active::before {
 /********funfact********/
 .discuss {
   background: #ffffff;
+  padding: 93px 0 105px 0;
 }
 
 .discuss .discuss-header {
@@ -8455,7 +8461,6 @@ header .nav-bar .nav-bar_menu .active::before {
 
 .discuss .discuss-content {
   position: relative;
-  padding-bottom: 105px;
 }
 
 .discuss .discuss-content .content_wrap > p {
@@ -8492,7 +8497,7 @@ header .nav-bar .nav-bar_menu .active::before {
   color: #b9bec1;
   font-size: 11px;
   font-size: 0.6875rem;
-  padding-right: 90px;
+  white-space: pre-line;
   line-height: 2.1;
 }
 
@@ -8568,13 +8573,14 @@ header .nav-bar .nav-bar_menu .active::before {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  margin-right: -8px;
 }
 
 .discuss .discuss-content .content_wrap .field_mess form button {
   padding: 0;
   font-size: 16px;
   font-size: 1rem;
-  width: 135px;
+  width: 140px;
   color: #111111;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8590,6 +8596,18 @@ header .nav-bar .nav-bar_menu .active::before {
   outline: none;
 }
 
+@media only screen and (max-width: 1200px) {
+  .discuss .discuss-content .content_wrap .field_mess form button {
+    width: 131px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .discuss .discuss-content .content_wrap .field_mess form button {
+    width: 123px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .discuss .discuss-content .content_wrap .field_mess form button {
     width: 105px;
@@ -8601,9 +8619,23 @@ header .nav-bar .nav-bar_menu .active::before {
 }
 
 .discuss .discuss-content .content_wrap .field_mess form button i {
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 20px;
+  font-size: 1.25rem;
   color: #0eb493;
+}
+
+@media only screen and (max-width: 1200px) {
+  .discuss .discuss-content .content_wrap .field_mess form button i {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    padding-top: 3px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .discuss .discuss-content .content_wrap .field_mess form button i {
+    padding: 0;
+  }
 }
 
 .discuss .discuss-content .content_wrap .field_mess .mess_input-top {
@@ -8675,18 +8707,17 @@ header .nav-bar .nav-bar_menu .active::before {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-}
-
-@media only screen and (max-width: 767px) {
-  .discuss .discuss-content .content_wrap .field_mess .mess_link {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-  }
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .discuss .discuss-content .content_wrap .field_mess .mess_link a {
   margin-bottom: 8px;
+}
+
+.discuss .discuss-content .content_wrap .field_mess .mess_link a:last-child {
+  margin-bottom: 24px;
 }
 
 .discuss .discuss-content .content_wrap .field_mess .mess_link i {
@@ -8707,9 +8738,6 @@ header .nav-bar .nav-bar_menu .active::before {
 footer {
   background: #1ea78d;
   line-height: 1.9;
-}
-
-footer .footer-wrap {
   padding: 100px 0 122px 0;
 }
 
@@ -8741,6 +8769,9 @@ footer .wrap_comp {
 @media only screen and (max-width: 991px) {
   footer .wrap_comp {
     padding-right: 30px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
   }
 }
 
@@ -8759,6 +8790,9 @@ footer .wrap_comp {
     text-align: center;
     padding: 0;
   }
+  footer .wrap_comp p {
+    width: 80%;
+  }
 }
 
 footer .wrap_comp img {
@@ -8772,7 +8806,10 @@ footer .wrap_search {
 
 @media only screen and (max-width: 991px) {
   footer .wrap_search {
-    padding: 0 12px 0 30px;
+    padding: 0 0 0 40px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
   }
 }
 
@@ -8818,6 +8855,7 @@ footer .wrap_search p {
   footer .wrap_search p {
     padding-right: 0;
     text-align: center;
+    width: 80%;
   }
 }
 
@@ -8875,7 +8913,10 @@ footer .wrap_link {
 
 @media only screen and (max-width: 991px) {
   footer .wrap_link {
-    padding: 14px 30px 0 0;
+    padding: 27px 0 0 40px;
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
   }
 }
 
@@ -8892,6 +8933,9 @@ footer .wrap_link {
         -ms-flex-align: center;
             align-items: center;
     padding: 0;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
   }
 }
 
@@ -8901,6 +8945,12 @@ footer .wrap_link h6 {
   font-size: 0.875rem;
   color: #d7d5d0;
   margin-bottom: 36px;
+}
+
+@media only screen and (max-width: 991px) {
+  footer .wrap_link h6 {
+    margin-bottom: 30px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -8949,7 +8999,10 @@ footer .wrap_info {
 
 @media only screen and (max-width: 991px) {
   footer .wrap_info {
-    padding-left: 30px;
+    padding: 71px 0 0 0;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
   }
 }
 
@@ -8966,24 +9019,27 @@ footer .wrap_info {
         -ms-flex-align: center;
             align-items: center;
     padding: 0;
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
   }
 }
 
 footer .wrap_info p {
   color: #ffffff;
-  margin-bottom: 48px;
   position: relative;
-}
-
-@media only screen and (max-width: 500px) {
-  footer .wrap_info p {
-    text-align: center;
-  }
+  margin-bottom: 45px;
 }
 
 @media only screen and (max-width: 767px) {
   footer .wrap_info p {
     margin-bottom: 25px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  footer .wrap_info p {
+    text-align: center;
   }
 }
 
@@ -9026,7 +9082,6 @@ footer .wrap_info p span a {
 }
 
 .banner .slick-dots {
-  left: unset;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9039,7 +9094,6 @@ footer .wrap_info p span a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 0;
   bottom: 373px;
   right: 48px;
 }
@@ -9174,9 +9228,6 @@ footer .wrap_info p span a {
 .banner .slick-item_content p {
   font-size: 18px;
   font-size: 1.125rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -9229,6 +9280,7 @@ footer .wrap_info p span a {
 .banner .content_social a {
   padding-right: 18px;
   cursor: pointer;
+  outline: none;
 }
 
 .banner .content_social a:nth-child(3) {

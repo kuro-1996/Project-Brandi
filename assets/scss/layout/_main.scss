@@ -1,7 +1,7 @@
 .features {
   background: #f4f7f9;
+  padding: 70px 0 51px 0;
   .slick-dots {
-    padding-bottom: 45px;
     position: unset;
     li {
       width: 8px;
@@ -54,6 +54,7 @@
 /*****features*********/
 .work {
   background: #ffffff;
+  padding-top: 92px;
   .work-header {
     margin-bottom: 31px;
   }
@@ -65,15 +66,17 @@
     }
   }
   .work-content {
-    p {
-      max-width: 940px;
-      margin: 0 auto;
-      margin-bottom: 48px;
-      font-weight: 600;
-      @include font-size(18px);
-      color: #384d5c;
-      text-align: center;
-      line-height: 1.35;
+    .container {
+      p {
+        max-width: 940px;
+        margin: 0 auto;
+        margin-bottom: 48px;
+        font-weight: 600;
+        @include font-size(18px);
+        color: #384d5c;
+        text-align: center;
+        line-height: 1.35;
+      }
     }
   }
   .btn-group {
@@ -103,7 +106,6 @@
     }
   }
   .element-item {
-    position: relative;
     float: left;
     width: 25%;
     height: 300px;
@@ -139,6 +141,12 @@
       text-align: center;
       @include font-size(18px);
       padding-top: 95px;
+      @media #{$info-tablet-horizontal}{
+        padding: 95px 10px 0 10px;
+      }
+      @media #{$info-tablet-vertical} {
+        padding: 60px 20px 0 20px;
+      }
       @media #{$info-phone} and (min-width: 501px) {
         padding-top: 40px;
         @include font-size(16px);
@@ -185,17 +193,17 @@
 /***********work**********/
 .team {
   background: #ffffff;
+  padding: 94px 0 117px 0;
+  @media #{$info-phone} {
+    padding: 94px 0 96px 0;
+  }
   .team-header {
-    padding-top: 95px;
+    margin-bottom: 31px;
   }
-  .team-wrap {
-    padding: 6px 0 87px 0;
-    @media #{$info-phone} {
-      padding-bottom: 56px;
-    }
-  }
-
   .content-slick {
+    &.slick-dotted.slick-slider {
+      margin: 0;
+    }
     .slick-arrow {
       display: none !important;
     }
@@ -272,12 +280,14 @@
     }
     img {
       height: 300px;
+      margin-bottom: 19px;
       @media #{$info-tablet-vertical} {
         height: 200px;
         width: 100%;
       }
       @media #{$info-phone} {
         height: 250px;
+        margin-bottom: 10px;
       }
     }
     .item_hover {
@@ -289,6 +299,7 @@
       position: absolute;
       top: 0;
       padding: 18px 20px 0 20px;
+      
       @media screen and (min-width: 993px) and (max-width: 1199px) {
         width: 290px;
       }
@@ -299,6 +310,7 @@
       @media #{$info-phone} {
         width: 240px;
         height: 250px;
+        padding-top: 28px;
       }
       p {
         @include font-size(16px);
@@ -362,10 +374,7 @@
     }
     .hover_name {
       text-align: center;
-      padding-top: 19px;
-      @media #{$info-phone} {
-        padding-top: 10px;
-      }
+      
       h6 {
         font-weight: 600;
         @include font-size(18px);
@@ -382,12 +391,12 @@
 .funfact {
   background: url("../img/ff-bg.jpg");
   background-size: cover;
+  padding: 93px 0 152px 0;
+  @media #{$info-tablet-vertical} {
+    padding-bottom: 76px;
+  }
   .funfact-content {
-    padding-bottom: 152px;
-      @media #{$info-tablet-vertical} {
-        padding-bottom: 76px;
-      }
-    .content_contain { 
+    .content_contain {
       .contain_item {
         @include font-size(18px);
         color: #ffffff;
@@ -436,13 +445,13 @@
 /********funfact********/
 .discuss {
   background: #ffffff;
+  padding: 93px 0 105px 0;
   .discuss-header {
     margin-bottom: 30px;
   }
   .discuss-content {
     position: relative;
-    padding-bottom: 105px;
-    .content_wrap {    
+    .content_wrap {
       & > p {
         font-weight: 600;
         @include font-size(18px);
@@ -464,7 +473,7 @@
         p {
           color: #b9bec1;
           @include font-size(11px);
-          padding-right: 90px;
+          white-space: pre-line;
           line-height: 2.1;
           @media #{$info-phone} {
             padding-right: 50px;
@@ -494,7 +503,7 @@
             border-bottom: 1px solid #cccccc;
             @include font-size(13px);
             color: #adb1b6;
-            &:focus{
+            &:focus {
               border-bottom: 2px solid #0eb493;
             }
             &::placeholder {
@@ -504,11 +513,12 @@
           .mess_btn {
             display: flex;
             justify-content: flex-end;
+            margin-right: -8px;
           }
           button {
             padding: 0;
             @include font-size(16px);
-            width: 135px;
+            width: 140px;
             color: #111111;
             display: flex;
             align-items: center;
@@ -516,6 +526,12 @@
             border: none;
             background: none;
             outline: none;
+            @media #{$info-tablet-horizontal}{
+              width: 131px;
+            }
+            @media #{$info-tablet-vertical}{
+              width: 123px;
+            }
             @media #{$info-phone} {
               width: 105px;
             }
@@ -523,8 +539,15 @@
               color: #0eb493;
             }
             i {
-              @include font-size(16px);
+              @include font-size(20px);
               color: #0eb493;
+              @media #{$info-tablet-horizontal}{
+                @include font-size(19px);
+                padding-top: 3px;
+              }
+              @media #{$info-phone}{
+                padding: 0;
+              }
             }
           }
         }
@@ -544,7 +567,7 @@
             border-bottom: 1px solid #cccccc;
             @include font-size(13px);
             color: #adb1b6;
-            &:focus{
+            &:focus {
               border-bottom: 2px solid #0eb493;
             }
             @media #{$info-phone} {
@@ -559,11 +582,12 @@
         .mess_link {
           display: flex;
           flex-flow: column;
-          @media #{$info-phone} {
-            justify-content: flex-end;
-          }
+          justify-content: flex-end;
           a {
             margin-bottom: 8px;
+            &:last-child{
+              margin-bottom: 24px;
+            }
           }
           i {
             color: #cdd2d6;

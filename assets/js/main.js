@@ -155,3 +155,8 @@ var $grid = $('.grid').isotope({
     }
   );
   wow.init();
+
+ 
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();
+});
