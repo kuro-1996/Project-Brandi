@@ -4,12 +4,6 @@ footer {
   padding: 100px 0 122px 0;
   .footer-wrap {
     .col-12 {
-      &:first-child {
-        padding-left: 0;
-      }
-      &:last-child {
-        padding-right: 0;
-      }
       @media #{$info-phone} {
         margin-bottom: 50px;
         &:last-child {
@@ -19,48 +13,52 @@ footer {
     }
   }
 
-  .wrap_comp {
+  .footer-wrap__comp {
     @include font-size(13px);
-      color: #ffffff;
-      padding-right: 10px;
-      word-spacing: 1px;
-      @media only screen and (max-width: 991px) {
-        padding-right: 30px;
-        order: 1;
+    color: #ffffff;
+    @media only screen and (max-width : 1199px){
+      padding-right: 0;
+    }
+    @media only screen and (max-width : 991px){
+      padding-right: 65px;
+      order: 1;
+    }
+    @media #{$info-phone} {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 15px 0 15px;
+      p{
+        width: 80%;
       }
-      @media #{$info-phone} {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        text-align: center;
-        padding: 0;
-        p{
-          width: 80%;
-        }
-      }
+    }
     img {
       display: block;
       margin-bottom: 37px;
     }
   }
-  .wrap_search {
-    padding: 14px 12px 0 10px;
-    @media only screen and (max-width: 991px) {
-      padding: 0 0 0 40px;
+  .footer-wrap__search {
+    padding-top: 14px;
+    @media only screen and (max-width : 1199px){
+      padding-right: 0;
+    }
+    @media only screen and (max-width : 991px){
+      padding: 16px 15px 0 80px;
       order: 2;
     }
     @media #{$info-phone} {
       display: flex;
       flex-flow: column;
       align-items: center;
-      padding: 0;
-    }
-
+      padding: 0 15px 0 15px;
+      order: 2;
+    }  
     h6 {
       font-weight: 700;
       @include font-size(14px);
       color: #d7d5d0;
-      margin-bottom: 43px;
+      margin-bottom: 44px;
       @media #{$info-phone} {
         margin-bottom: 20px;
       }
@@ -68,22 +66,21 @@ footer {
     p {
       color: #ffffff;
       @include font-size(13px);
-      word-spacing: 1px;
-      padding-right: 20px;
+      padding-right: 30px;
       @media #{$info-phone} {
         padding-right: 0;
         text-align: center;
         width: 80%;
       }
     }
-    .search_area {
+    .search__area {
       height: 42px;
       border: 2px solid #ffffff;
       display: flex;
       justify-content: space-between;
       margin-bottom: 17px;
       @include border-radius(5px);
-      @media #{$info-phone} {
+      @media #{$info-phone}{
         width: 80%;
       }
       input {
@@ -94,32 +91,33 @@ footer {
         color: #ffffff;
         @include font-size(13px);
       }
-      .fa {
+      .fas {
         border: none;
         background: none;
         @include font-size(20px);
         color: rgba(#ffffff, 0.6);
         padding-right: 17px;
+        transition: all .3s ease-in-out;
         &:hover {
           color: #062033;
         }
       }
     }
   }
-  .wrap_link {
-    padding: 14px 6px 0 19px;
-    @media screen and (max-width: 1199px) {
-      padding-left: 6px;
+  .footer-wrap__link {
+    padding-top: 14px;
+    @media only screen and (max-width : 1199px){
+      padding-right: 0;
     }
-    @media only screen and (max-width: 991px) {
-      padding: 27px 0 0 40px;
+    @media only screen and (max-width : 991px) {
+      padding: 38px 15px 0 80px;
       order: 4;
     }
     @media #{$info-phone} {
       display: flex;
       flex-flow: column;
       align-items: center;
-      padding: 0;
+      padding: 0 15px 0 15px;
       order: 3;
     }
     h6 {
@@ -134,12 +132,13 @@ footer {
         margin-bottom: 20px;
       }
     }
-    .link_col {
+    .link__col {
       display: flex;
       a {
         display: block;
         @include font-size(13px);
         margin-bottom: 8px;
+        transition: all .3s ease-in-out;
         &:last-child {
           margin: 0;
         }
@@ -148,36 +147,39 @@ footer {
         }
       }
     }
-    .col_left {
+    .col__left {
       margin-right: 42px;
+      @media only screen and (min-width: 992px) and (max-width : 1199px){
+        margin-right: 27px;
+      }
     }
   }
-  .wrap_info {
+  .footer-wrap__info {
     @include font-size(13px);
-    padding: 67px 0 0 38px;
+    padding: 65px 15px 0 27px;
     color: #062033;
-    @media #{$info-tablet-horizontal} and (min-width:992px) {
-      padding-left: 28px;
+    @media only screen and (max-width : 1199px){
+      padding-left: 12px;
     }
-    @media only screen and (max-width: 991px) {
-      padding: 71px 0 0 0;
+    @media only screen and (max-width : 991px){
+      padding: 81px 65px 0 27px;
       order: 3;
     }
     @media #{$info-phone} {
       display: flex;
       flex-flow: column;
       align-items: center;
-      padding: 0;
+      padding: 0 15px 0 15px;
       order: 4;
     }
     p {
       color: #ffffff;
+      margin-bottom: 48px;
       position: relative;
-      margin-bottom: 45px;
-      @media #{$info-phone} {
+      @media #{$info-phone}{
         margin-bottom: 25px;
       }
-      @media #{$info-phone-4} {
+      @media #{$info-phone-4}{
         text-align: center;
       }
       &::before {
@@ -186,7 +188,7 @@ footer {
         width: 1px;
         background: #177e72;
         position: absolute;
-        left: -12px;
+        left: -13px;
         bottom: 4px;
         @media #{$info-tablet-vertical} {
           left: -13px;

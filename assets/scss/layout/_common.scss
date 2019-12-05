@@ -1,8 +1,9 @@
 a {
   &:hover {
-    text-decoration: none;
     color: white;
+    text-decoration: none;
   }
+  text-decoration: none;
   color: white;
 }
 
@@ -38,18 +39,12 @@ body {
     max-width: 1200px;
   }
 }
-.row {
-  margin: 0;
-}
 
 button {
   cursor: pointer;
 }
 input {
   outline: none;
-}
-.slick-arrow {
-  display: none !important;
 }
 
 .change {
