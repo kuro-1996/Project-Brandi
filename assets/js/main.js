@@ -1,7 +1,7 @@
 $(document).ready(function () {
-    $('.nav-bar__menu').children().click(function () {   
+    $('.nav-bar__menu').children().click(function () {
         $('.nav-bar__menu').children().removeClass('active');
-        $('.nav-bar__btn').removeClass('active');    
+        $('.nav-bar__btn').removeClass('active');
         $(this).addClass('active');
     });
 
@@ -10,52 +10,99 @@ $(document).ready(function () {
         $(this).addClass('active');
     });
 
-    $('.nav-bar__menu a:first-child').click(function() {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.scroll-top').fadeIn('500', 'swing');
+        } else {
+            $('.scroll-top').fadeOut('500', 'swing');
+        }
+    });
+
+    $('.scroll-top').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        return false;
+    });
+
+
+    $('.nav-bar__menu a:first-child').click(function () {
         $('html,body').animate({
-            scrollTop: $('.banner').offset().top - $('.nav-bar').height()},
+            scrollTop: $('.banner').offset().top - $('.nav-bar').height()
+        },
             'slow');
     });
 
-    $('.nav-bar__menu a:nth-child(2)').click(function() {
+    $('.nav-bar__menu a:nth-child(2)').click(function () {
         $('html,body').animate({
-            scrollTop: $('.features').offset().top - $('.nav-bar').height()},
+            scrollTop: $('.features').offset().top - $('.nav-bar').height()
+        },
             'slow');
     });
 
-    $('.nav-bar__menu a:nth-child(3)').click(function() {
+    $('.nav-bar__menu a:nth-child(3)').click(function () {
         $('html,body').animate({
-            scrollTop: $('.work').offset().top - $('.nav-bar').height()},
+            scrollTop: $('.work').offset().top - $('.nav-bar').height()
+        },
             'slow');
     });
 
-    $('.nav-bar__menu a:nth-child(4)').click(function() {
+    $('.nav-bar__menu a:nth-child(4)').click(function () {
         $('html,body').animate({
-            scrollTop: $('.team').offset().top - $('.nav-bar').height()},
+            scrollTop: $('.team').offset().top - $('.nav-bar').height()
+        },
             'slow');
     });
 
-    $('.nav-bar__menu a:last-child').click(function() {
+    $('.nav-bar__menu a:last-child').click(function () {
         $('html,body').animate({
-            scrollTop: $('.discuss').offset().top - $('.nav-bar').height()},
+            scrollTop: $('.discuss').offset().top - $('.nav-bar').height()
+        },
             'slow');
     });
 
-    $(function () {
-        var banner = $('.banner');
-        var header = $('header');
-        pos = banner.offset();
-
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > pos.top + banner.height() - header.height()) {
-                $(header).addClass('change'); 
-            } else if ($(this).scrollTop() <= pos.top + banner.height() - header.height() && header.hasClass('change')) {
-                $(header).removeClass('change');
+    a = 0;
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > $('.banner').offset().top + $('.banner').height() - $('header').height()) {
+            $('header').addClass('change');
+        } else if ($(this).scrollTop() <= $('.banner').offset().top + $('.banner').height() - $('header').height()) {
+            $('header').removeClass('change');
+        }
+        var arr = [$('.features'), $('.work'), $('.team'), $('.discuss')]
+        arr.forEach(el => {
+            if ($(this).scrollTop() > el.offset().top - 350) {
+                el.addClass('change');
             }
         });
+        if (a == 0 && $(this).scrollTop() > $('.funfact').offset().top - 450) {
+            $('.funfact').addClass('change');
+            $('.item__counter').each(function () {
+                var $this = $(this),
+                    countTo = $this.attr('data-count');
+                $({
+                    countNum: $this.text()
+                }).animate({
+                    countNum: countTo
+                },
+                    {
+                        duration: 8000,
+                        easing: 'swing',
+                        step: function () {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function () {
+                            $this.text(this.countNum);
+                        }
+                    });
+            });
+            a = 1;
+        };
+        if ($(this).scrollTop() > $('footer').offset().top - 400) {
+            $('footer').addClass('change');
+        }
     });
+    //add animation when scroll
 
     $('.nav-bar__btn').click(function () {
-        $(this).toggleClass('active');  
+        $(this).toggleClass('active');
     });
 
     $('.team-wrap__slick').slick({
@@ -92,43 +139,16 @@ $(document).ready(function () {
         slidesToScroll: 1
     });
 
-    var a = 0;
-    $(window).scroll(function () {
-        var pos = $('.funfact').offset().top - window.innerHeight;
-        if (a == 0 && $(window).scrollTop() > pos) {
-            $('.item__counter').each(function () {
-                var $this = $(this),
-                    countTo = $this.attr('data-count');
-                $({
-                    countNum: $this.text()
-                }).animate({
-                    countNum: countTo
-                },
-                    {
-                        duration: 8000,
-                        easing: 'swing',
-                        step: function () {
-                            $this.text(Math.floor(this.countNum));
-                        },
-                        complete: function () {
-                            $this.text(this.countNum);
-                        }
-                    });
-            });
-            a = 1;
-        }
-    });
-
-    var $grid = $('.grid').isotope({
+    var $grid = $('.work-content__grid').isotope({
         itemSelector: '.element-item',
         layoutMode: 'fitRows'
     });
-    
+
     $('.filter-btn-group').on('click', 'button', function () {
         var filterValue = $(this).attr('data-filter');
         $grid.isotope({ filter: filterValue });
     });
-    
+
     $('.btn-group').each(function (i, buttonGroup) {
         var $buttonGroup = $(buttonGroup);
         $buttonGroup.on('click', 'button', function () {
@@ -136,23 +156,4 @@ $(document).ready(function () {
             $(this).addClass('is-checked');
         });
     });
-
-    var wow = new WOW(
-        {
-            boxClass: 'wow',      // animated element css class (default is wow)
-            animateClass: 'animated', // animation css class (default is animated)
-            offset: 0,          // distance to the element when triggering the animation (default is 0)
-            mobile: true,       // trigger animations on mobile devices (default is true)
-            live: true,       // act on asynchronously loaded content (default is true)
-            callback: function (box) {
-                // the callback is fired every time an animation is started
-                // the argument that is passed in is the DOM node being animated
-            },
-            scrollContainer: null,    // optional scroll container selector, otherwise use window,
-            resetAnimation: true,     // reset animation on end (default is true)
-        }
-    );
-    wow.init();
-    
-    $("img.lazyload").lazyload();
 });

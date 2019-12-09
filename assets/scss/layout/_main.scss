@@ -1,7 +1,12 @@
 .features {
   background: #f4f7f9;
   padding: 70px 0 51px 0;
-  
+  &.change{
+    .features-content__item.slick-active {
+      @include animation(bounceInLeft);
+      animation-duration: 1s;
+    }
+  }
   .slick-dots {
     position: unset;
     li {
@@ -28,9 +33,7 @@
   .slick-initialized .slick-slide {
     display: flex;
   }
-  .slick-dotted.slick-slider{
-    margin-bottom: 0;
-  }
+  
   .item__wrap {
     padding: 0 15px 0 30px;
     @media #{$info-tablet-vertical} {
@@ -58,6 +61,12 @@
 .work {
   background: #ffffff;
   padding-top: 92px;
+  &.change{
+    .work-content__grid{
+      @include animation(fadeInLeft);
+      animation-duration: 1s;
+    }
+  }
   .work-header {
     margin-bottom: 31px;
   }
@@ -69,7 +78,9 @@
     }
   }
   .work-content {
-    .container {
+    .work-content__top-info {
+      margin-bottom: 37px;
+      padding: 0 15px 0 15px;
       p {
         max-width: 940px;
         margin: 0 auto;
@@ -85,7 +96,6 @@
   .btn-group {
     display: flex;
     justify-content: center;
-    margin-bottom: 37px;
     flex-flow: wrap;
     .button {
       font-weight: 700;
@@ -95,7 +105,7 @@
       outline: none;
       @include border-radius(5px);
       margin-right: 8px;
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
       &:last-child {
         margin: 0;
       }
@@ -198,16 +208,19 @@
 .team {
   background: #ffffff;
   padding: 94px 0 117px 0;
-  @media #{$info-phone} {
-    padding: 94px 0 96px 0;
+  &.change{
+    .team-wrap__slick{
+      @include animation(bounceInLeft);
+      animation-duration: 1s;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    padding-bottom: 94px;
   }
   .team-header {
     margin-bottom: 31px;
   }
   .team-wrap__slick {
-    &.slick-dotted.slick-slider {
-      margin: 0;
-    }
     .slick-initialized .slick-slide {
       display: flex;
     }
@@ -241,12 +254,8 @@
       margin-bottom: 36px;
     }
   }
-  .team-wrap__header {
-    margin-bottom: 107px;
-    @media #{$info-phone} {
-      margin-bottom: 64px;
-    }
-    p {
+  .team-wrap {
+    & > p {
       @include font-size(18px);
       font-weight: 600;
       color: #5b646e;
@@ -254,6 +263,10 @@
       margin: 0 auto;
       max-width: 950px;
       line-height: 1.35;
+      margin-bottom: 107px;
+      @media #{$info-phone} {
+        margin-bottom: 64px;
+      }
     }
   }
 
@@ -303,8 +316,7 @@
       transition: opacity 500ms ease-in-out;
       position: absolute;
       top: 0;
-      padding: 18px 20px 0 20px;
-
+      padding: 21px 20px 0 20px;
       @media screen and (min-width: 992px) and (max-width: 1199px) {
         width: 290px;
       }
@@ -317,28 +329,25 @@
         height: 250px;
         padding-top: 28px;
       }
+      h6 {
+        padding: 0 5px 0 5px;
+        margin-bottom: 12px;
+        font-weight: 700;
+        text-align: center;
+        color: #ffffff;
+      }
       p {
         @include font-size(16px);
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 65px;
         @media screen and (max-width: 991px) {
           @include font-size(14px);
+          margin-bottom: 15px;
         }
         @media #{$info-phone} {
           @include font-size(16px);
-        }
-        color: #ffffff;
-        text-align: center;
-        &:first-child {
-          padding: 0 5px 8px 5px;
-          font-weight: 700;
-        }
-        & + p {
-          margin-bottom: 65px;
-          @media screen and (max-width: 991px) {
-            margin-bottom: 25px;
-          }
-          @media #{$info-phone} {
-            margin-bottom: 35px;
-          }
+          margin-bottom: 35px;
         }
       }
       nav {
@@ -382,7 +391,7 @@
       h6 {
         font-weight: 600;
         @include font-size(18px);
-        transition: all .5s ease-in-out;
+        transition: all 0.5s ease-in-out;
       }
       p {
         @include font-size(13px);
@@ -397,7 +406,23 @@
   background: url("../img/ff-bg.jpg");
   background-size: cover;
   padding: 93px 0 152px 0;
-  @media #{$info-tablet-vertical} {
+  &.change{
+    .funfact-content {
+      .content__info {
+        .info__item{
+          &:first-child,&:nth-child(2){
+            @include animation(bounceInLeft);
+            animation-duration: 1s;
+          }
+          &:nth-child(3),&:last-child{
+            @include animation(bounceInRight);
+            animation-duration: 1s;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 991px) {
     padding-bottom: 76px;
   }
   .funfact-content {
@@ -406,7 +431,7 @@
         @include font-size(18px);
         color: #ffffff;
         text-align: center;
-        @media #{$info-tablet-vertical} {
+        @media screen and (max-width: 991px) {
           &:first-child,
           &:nth-child(2) {
             margin-bottom: 30px;
@@ -440,7 +465,6 @@
         .item__counter {
           font-weight: 600;
           @include font-size(60px);
-          height: 71px;
           line-height: 71px;
         }
       }
@@ -451,6 +475,18 @@
 .discuss {
   background: #ffffff;
   padding: 93px 0 105px 0;
+  &.change{
+    .discuss-content__wrap{
+      &>p, .wrap__info{
+        @include animation(fadeInLeft);
+        animation-duration: 1s;
+      }
+      .wrap__mess{
+        @include animation(fadeInRight);
+        animation-duration: 1s;
+      }
+    }
+  }
   .discuss-header {
     margin-bottom: 30px;
   }
@@ -461,11 +497,13 @@
         font-weight: 600;
         @include font-size(18px);
         text-align: center;
+        padding: 0 30px 0 30px;
+        margin: 0 auto;
         margin-bottom: 69px;
       }
       .wrap__info {
         padding-top: 6px;
-        @media #{$info-tablet-vertical} {
+        @media screen and (max-width: 991px) {
           margin-bottom: 20px;
         }
         h5 {
@@ -496,7 +534,7 @@
             color: #062033;
             margin-bottom: 41px;
           }
-          input{
+          input {
             padding-bottom: 16px;
             border: none;
             border-bottom: 1px solid #cccccc;
@@ -524,14 +562,14 @@
               @media #{$info-phone} {
                 width: 100%;
                 margin-bottom: 19px;
-              }   
+              }
             }
           }
           & > input {
-            width: 100%; 
-            margin-bottom: 33px;       
+            width: 100%;
+            margin-bottom: 33px;
           }
-        
+
           button {
             padding: 0;
             @include font-size(16px);
@@ -545,7 +583,7 @@
             outline: none;
             margin-left: auto;
             margin-right: -8px;
-            transition: all .3s ease-in-out;
+            transition: all 0.3s ease-in-out;
             @media #{$info-tablet-horizontal} {
               width: 131px;
             }
@@ -571,7 +609,7 @@
             }
           }
         }
-        
+
         .mess__link {
           display: flex;
           flex-flow: column;

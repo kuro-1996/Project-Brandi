@@ -7510,10 +7510,6 @@ input {
   outline: none;
 }
 
-.change {
-  background-color: #1ea78d;
-}
-
 .top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7557,6 +7553,10 @@ input {
   color: #c3c6c7;
 }
 
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
 header {
   background: #101636;
   background: rgba(16, 22, 54, 0.2);
@@ -7572,6 +7572,10 @@ header {
   header {
     height: 48px;
   }
+}
+
+header.change {
+  background: #1ea78d;
 }
 
 @media only screen and (max-width: 767px) {
@@ -7866,6 +7870,13 @@ header .nav-bar .nav-bar__menu .active::before {
   padding: 70px 0 51px 0;
 }
 
+.features.change .features-content__item.slick-active {
+  -webkit-animation: bounceInLeft;
+  animation: bounceInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
 .features .slick-dots {
   position: unset;
 }
@@ -7899,10 +7910,6 @@ header .nav-bar .nav-bar__menu .active::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.features .slick-dotted.slick-slider {
-  margin-bottom: 0;
 }
 
 .features .item__wrap {
@@ -7942,6 +7949,13 @@ header .nav-bar .nav-bar__menu .active::before {
   padding-top: 92px;
 }
 
+.work.change .work-content__grid {
+  -webkit-animation: fadeInLeft;
+  animation: fadeInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
 .work .work-header {
   margin-bottom: 31px;
 }
@@ -7952,7 +7966,12 @@ header .nav-bar .nav-bar__menu .active::before {
   clear: both;
 }
 
-.work .work-content .container p {
+.work .work-content .work-content__top-info {
+  margin-bottom: 37px;
+  padding: 0 15px 0 15px;
+}
+
+.work .work-content .work-content__top-info p {
   max-width: 940px;
   margin: 0 auto;
   margin-bottom: 48px;
@@ -7971,7 +7990,6 @@ header .nav-bar .nav-bar__menu .active::before {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 37px;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
 }
@@ -7984,8 +8002,8 @@ header .nav-bar .nav-bar__menu .active::before {
   outline: none;
   border-radius: 5px;
   margin-right: 8px;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .work .btn-group .button:last-child {
@@ -8129,18 +8147,21 @@ header .nav-bar .nav-bar__menu .active::before {
   padding: 94px 0 117px 0;
 }
 
-@media only screen and (max-width: 767px) {
+.team.change .team-wrap__slick {
+  -webkit-animation: bounceInLeft;
+  animation: bounceInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@media screen and (max-width: 991px) {
   .team {
-    padding: 94px 0 96px 0;
+    padding-bottom: 94px;
   }
 }
 
 .team .team-header {
   margin-bottom: 31px;
-}
-
-.team .team-wrap__slick.slick-dotted.slick-slider {
-  margin: 0;
 }
 
 .team .team-wrap__slick .slick-initialized .slick-slide {
@@ -8186,17 +8207,7 @@ header .nav-bar .nav-bar__menu .active::before {
   }
 }
 
-.team .team-wrap__header {
-  margin-bottom: 107px;
-}
-
-@media only screen and (max-width: 767px) {
-  .team .team-wrap__header {
-    margin-bottom: 64px;
-  }
-}
-
-.team .team-wrap__header p {
+.team .team-wrap > p {
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: 600;
@@ -8205,6 +8216,13 @@ header .nav-bar .nav-bar__menu .active::before {
   margin: 0 auto;
   max-width: 950px;
   line-height: 1.35;
+  margin-bottom: 107px;
+}
+
+@media only screen and (max-width: 767px) {
+  .team .team-wrap > p {
+    margin-bottom: 64px;
+  }
 }
 
 .team .slick__item {
@@ -8270,7 +8288,7 @@ header .nav-bar .nav-bar__menu .active::before {
   transition: opacity 500ms ease-in-out;
   position: absolute;
   top: 0;
-  padding: 18px 20px 0 20px;
+  padding: 21px 20px 0 20px;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
@@ -8294,17 +8312,27 @@ header .nav-bar .nav-bar__menu .active::before {
   }
 }
 
+.team .slick__item .item__hover h6 {
+  padding: 0 5px 0 5px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+}
+
 .team .slick__item .item__hover p {
   font-size: 16px;
   font-size: 1rem;
   color: #ffffff;
   text-align: center;
+  margin-bottom: 65px;
 }
 
 @media screen and (max-width: 991px) {
   .team .slick__item .item__hover p {
     font-size: 14px;
     font-size: 0.875rem;
+    margin-bottom: 15px;
   }
 }
 
@@ -8312,26 +8340,6 @@ header .nav-bar .nav-bar__menu .active::before {
   .team .slick__item .item__hover p {
     font-size: 16px;
     font-size: 1rem;
-  }
-}
-
-.team .slick__item .item__hover p:first-child {
-  padding: 0 5px 8px 5px;
-  font-weight: 700;
-}
-
-.team .slick__item .item__hover p + p {
-  margin-bottom: 65px;
-}
-
-@media screen and (max-width: 991px) {
-  .team .slick__item .item__hover p + p {
-    margin-bottom: 25px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .team .slick__item .item__hover p + p {
     margin-bottom: 35px;
   }
 }
@@ -8396,8 +8404,8 @@ header .nav-bar .nav-bar__menu .active::before {
   font-weight: 600;
   font-size: 18px;
   font-size: 1.125rem;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .team .slick__item .hover__name p {
@@ -8413,7 +8421,21 @@ header .nav-bar .nav-bar__menu .active::before {
   padding: 93px 0 152px 0;
 }
 
-@media only screen and (max-width: 992px) {
+.funfact.change .funfact-content .content__info .info__item:first-child, .funfact.change .funfact-content .content__info .info__item:nth-child(2) {
+  -webkit-animation: bounceInLeft;
+  animation: bounceInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.funfact.change .funfact-content .content__info .info__item:nth-child(3), .funfact.change .funfact-content .content__info .info__item:last-child {
+  -webkit-animation: bounceInRight;
+  animation: bounceInRight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@media screen and (max-width: 991px) {
   .funfact {
     padding-bottom: 76px;
   }
@@ -8426,7 +8448,7 @@ header .nav-bar .nav-bar__menu .active::before {
   text-align: center;
 }
 
-@media only screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .funfact .funfact-content .content__info .info__item:first-child, .funfact .funfact-content .content__info .info__item:nth-child(2) {
     margin-bottom: 30px;
   }
@@ -8467,7 +8489,6 @@ header .nav-bar .nav-bar__menu .active::before {
   font-weight: 600;
   font-size: 60px;
   font-size: 3.75rem;
-  height: 71px;
   line-height: 71px;
 }
 
@@ -8475,6 +8496,20 @@ header .nav-bar .nav-bar__menu .active::before {
 .discuss {
   background: #ffffff;
   padding: 93px 0 105px 0;
+}
+
+.discuss.change .discuss-content__wrap > p, .discuss.change .discuss-content__wrap .wrap__info {
+  -webkit-animation: fadeInLeft;
+  animation: fadeInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.discuss.change .discuss-content__wrap .wrap__mess {
+  -webkit-animation: fadeInRight;
+  animation: fadeInRight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 .discuss .discuss-header {
@@ -8490,6 +8525,8 @@ header .nav-bar .nav-bar__menu .active::before {
   font-size: 18px;
   font-size: 1.125rem;
   text-align: center;
+  padding: 0 30px 0 30px;
+  margin: 0 auto;
   margin-bottom: 69px;
 }
 
@@ -8497,7 +8534,7 @@ header .nav-bar .nav-bar__menu .active::before {
   padding-top: 6px;
 }
 
-@media only screen and (max-width: 992px) {
+@media screen and (max-width: 991px) {
   .discuss .discuss-content .discuss-content__wrap .wrap__info {
     margin-bottom: 20px;
   }
@@ -8639,8 +8676,8 @@ header .nav-bar .nav-bar__menu .active::before {
   outline: none;
   margin-left: auto;
   margin-right: -8px;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -8726,6 +8763,20 @@ footer {
   background: #1ea78d;
   line-height: 1.9;
   padding: 100px 0 122px 0;
+}
+
+footer.change .footer-wrap__comp, footer.change .footer-wrap__search {
+  -webkit-animation: fadeInLeft;
+  animation: fadeInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+footer.change .footer-wrap__info, footer.change .footer-wrap__link {
+  -webkit-animation: fadeInRight;
+  animation: fadeInRight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 @media only screen and (max-width: 767px) {
@@ -8879,7 +8930,7 @@ footer .footer-wrap__search .search__area input {
   font-size: 0.8125rem;
 }
 
-footer .footer-wrap__search .search__area .fas {
+footer .footer-wrap__search .search__area button {
   border: none;
   background: none;
   font-size: 20px;
@@ -8890,7 +8941,7 @@ footer .footer-wrap__search .search__area .fas {
   transition: all .3s ease-in-out;
 }
 
-footer .footer-wrap__search .search__area .fas:hover {
+footer .footer-wrap__search .search__area button:hover {
   color: #062033;
 }
 
@@ -9147,12 +9198,12 @@ footer .footer-wrap__info p span a {
   border: 1px solid #ccc;
 }
 
-.banner .slick-dotted.slick-slider {
-  margin: 0;
-}
-
 .banner .item__content {
   padding: 450px 0 50px 0;
+  -webkit-animation: bounceInLeft;
+  animation: bounceInLeft;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 @media only screen and (max-width: 992px) {
@@ -9307,6 +9358,30 @@ footer .footer-wrap__info p span a {
   font-size: 19px;
   font-size: 1.1875rem;
   color: rgba(255, 255, 255, 0.3);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.banner .scroll-top {
+  border: 2px solid #e98f11;
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 20px;
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  text-align: center;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  z-index: 1;
+}
+
+.banner .scroll-top i {
+  color: #e98f11;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }

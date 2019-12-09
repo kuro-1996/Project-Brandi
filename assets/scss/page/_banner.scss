@@ -1,6 +1,6 @@
 .banner {
   background: url("../img/Bandi-banner.png");
-  .slick-dots{
+  .slick-dots {
     display: flex;
     width: auto;
     flex-flow: column;
@@ -19,36 +19,35 @@
         display: none;
       }
     }
-    @media #{$info-phone-4}{
+    @media #{$info-phone-4} {
       bottom: 48px;
       right: 24px;
       height: 36px;
     }
-    @media only screen and (min-width: 501px) and (max-width : 767px){
+    @media only screen and (min-width: 501px) and (max-width: 767px) {
       bottom: 48px;
     }
-    @media #{$info-tablet-vertical} and (min-width: 768px){
+    @media #{$info-tablet-vertical} and (min-width: 768px) {
       bottom: 250px;
     }
-    li{
+    li {
       width: 8px;
       height: 8px;
       @include border-radius(50%);
       border: 1px solid #ccc;
     }
   }
-  .slick-dotted.slick-slider{
-    margin: 0;
-  }
   .item__content {
     padding: 450px 0 50px 0;
-    @media #{$info-tablet-vertical}{
+    @include animation(bounceInLeft);
+    animation-duration: 1s;
+    @media #{$info-tablet-vertical} {
       padding-top: 350px;
     }
-    @media #{$info-phone}{
+    @media #{$info-phone} {
       padding-top: 250px;
     }
-    @media #{$info-phone-4}{
+    @media #{$info-phone-4} {
       padding-top: 200px;
     }
     h2,
@@ -61,13 +60,13 @@
     }
     h2 {
       @include font-size(62px);
-      @media #{$info-phone-4}{
+      @media #{$info-phone-4} {
         @include font-size(42px);
       }
       span {
         font-weight: 700;
         padding-left: 17px;
-        @media #{$info-phone-4}{
+        @media #{$info-phone-4} {
           padding-left: 9px;
         }
       }
@@ -75,13 +74,13 @@
     h3 {
       @include font-size(48px);
       margin-bottom: 18px;
-      @media #{$info-phone-4}{
+      @media #{$info-phone-4} {
         @include font-size(28px);
       }
       span {
         color: #0ed691;
         padding-right: 11px;
-        @media #{$info-phone-4}{
+        @media #{$info-phone-4} {
           padding-right: 6px;
         }
       }
@@ -90,7 +89,7 @@
       @include font-size(18px);
       align-items: center;
       margin-bottom: 105px;
-      @media #{$info-phone-4}{
+      @media #{$info-phone-4} {
         @include font-size(15px);
       }
       &::before,
@@ -102,13 +101,13 @@
       }
       &::before {
         margin-right: 32px;
-        @media #{$info-phone-4}{
+        @media #{$info-phone-4} {
           margin-right: 16px;
         }
       }
       &:after {
         margin-left: 32px;
-        @media #{$info-phone-4}{
+        @media #{$info-phone-4} {
           margin-left: 16px;
         }
       }
@@ -121,22 +120,41 @@
       padding-right: 18px;
       cursor: pointer;
       outline: none;
-      &:nth-child(3){
+      &:nth-child(3) {
         padding-right: 12px;
       }
-      &:last-child{
-        padding:0;
+      &:last-child {
+        padding: 0;
       }
       &:hover {
-        i{
+        i {
           color: #ffffff;
         }
       }
-      i{
+      i {
         @include font-size(19px);
-        color: rgba(#ffffff,.3);
-        transition: all .3s ease-in-out;
+        color: rgba(#ffffff, 0.3);
+        transition: all 0.3s ease-in-out;
       }
+    }
+  }
+  .scroll-top{
+    border: 2px solid #e98f11;
+    outline: none;
+    background: rgba(#ffffff, 0.3);
+    @include font-size(20px);
+    width: 40px;
+    height: 40px;
+    @include border-radius(50%);
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    i{
+      color: #e98f11;
+      transition: all .3s ease-in-out;
     }
   }
 }

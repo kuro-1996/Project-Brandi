@@ -47,10 +47,6 @@ input {
   outline: none;
 }
 
-.change {
-  background-color: #1ea78d;
-}
-
 .top {
   display: flex;
   flex-flow: column;
@@ -83,3 +79,6 @@ input {
   }
 }
 
+.slick-dotted.slick-slider{
+  margin-bottom: 0;
+}
