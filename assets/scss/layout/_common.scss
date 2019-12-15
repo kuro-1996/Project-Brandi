@@ -1,9 +1,8 @@
 a {
   &:hover {
-    color: white;
     text-decoration: none;
+    color: white;
   }
-  text-decoration: none;
   color: white;
 }
 
@@ -30,14 +29,18 @@ img {
   max-width: 100%;
 }
 
-body {
-  background: #062033;
-}
-
 .container {
   @media only screen and (min-width: 1200px) {
     max-width: 1200px;
   }
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+body {
+  background: #062033;
 }
 
 button {
@@ -53,32 +56,30 @@ input {
   align-items: center;
   position: relative;
   margin-bottom: 25px;
+  &::after,
+  &::before {
+    content: "";
+    width: 90px;
+    height: 1px;
+    background: #c3c6c7;
+    position: absolute;
+    bottom: 6px;
+  }
+  &::after {
+    @include calc(left, "50% + 23px");
+  }
+  &::before {
+    @include calc(right, "50% + 23px");
+  }
   h2 {
     font-weight: 800;
     font-size: 28px;
     color: #0eb493;
-    margin-bottom: 17px;
-    &::after,
-    &::before {
-      content: "";
-      width: 90px;
-      height: 1px;
-      background: #c3c6c7;
-      position: absolute;
-      bottom: 6px;
-    }
-    &::after {
-      @include calc(left, "50% + 23px");
-    }
-    &::before {
-      @include calc(right, "50% + 23px");
-    }
+    margin-bottom: 19px;
   }
   i {
     color: #c3c6c7;
   }
 }
 
-.slick-dotted.slick-slider{
-  margin-bottom: 0;
-}
+
