@@ -276,6 +276,9 @@
     </section>
     <!-- work -->
     <section id="sec4" class="team">
+      <div class="popup">
+        <p>Hover on images for more information</p>
+      </div>
       <div class="team-header top">
         <h2>MEET OUR TEAM</h2>
         <i class="ti-heart"></i>
@@ -518,6 +521,11 @@
         mapProp
       );
     }
+  </script>
+  <script>
+    $(document).ready(function(){
+      $(this).scrollTop(0);
+    });
   </script>
   <script src="https://maps.googleapis.com/maps/api/js?key=&callback=myMap"></script>
   <script src="assets/js/vendor/jquery-3.4.1.min.js"></script>

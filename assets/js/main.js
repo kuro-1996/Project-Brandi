@@ -101,6 +101,7 @@ $(document).ready(function () {
         if ($(this).scrollTop() <= $('.banner').height() - $('header').height()) {
             $('header').removeClass('change');
         }
+        
         var arr = [$('.features'), $('.work'), $('.team'), $('.discuss')]
         arr.forEach(el => {
             if ($(this).scrollTop() > el.offset().top - 300) {

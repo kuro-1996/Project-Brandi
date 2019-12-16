@@ -8232,10 +8232,35 @@ main {
           animation-duration: 1s;
 }
 
+.team.change .popup {
+  -webkit-animation: slideInDownAbs 1s;
+  animation: slideInDownAbs 1s;
+  opacity: 1;
+}
+
 @media screen and (max-width: 991px) {
   .team {
     padding-bottom: 94px;
   }
+}
+
+.team .popup {
+  opacity: 0;
+  background-color: #0eb493;
+  padding: 15px;
+  text-align: center;
+  border-radius: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  display: inline-block;
+  position: absolute;
+  top: 265px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: 3;
+  -webkit-transition: left 1s ease-in-out;
+  transition: left 1s ease-in-out;
 }
 
 .team .team-header {
@@ -8685,7 +8710,7 @@ main {
 }
 
 .discuss .discuss-content .discuss-content__wrap .wrap__info address a:hover {
-  color: #0ed691;
+  color: #0eb493;
 }
 
 .discuss .discuss-content .discuss-content__wrap .wrap__mess {
@@ -9358,6 +9383,24 @@ footer .footer-wrap__info p span a {
   }
 }
 
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 @-webkit-keyframes fadeInLeft {
   0% {
     opacity: 0;
@@ -9543,6 +9586,26 @@ footer .footer-wrap__info p span a {
   100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slideInDownAbs {
+  0% {
+    opacity: 0;
+    top: -50px;
+  }
+  100% {
+    top: 265px;
+  }
+}
+
+@keyframes slideInDownAbs {
+  0% {
+    opacity: 0;
+    top: -50px;
+  }
+  100% {
+    top: 265px;
   }
 }
 
